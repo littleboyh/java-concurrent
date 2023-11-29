@@ -1,0 +1,164 @@
+2023-11-29 20:55:19
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.211-b12 mixed mode):
+
+"Attach Listener" #16 daemon prio=9 os_prio=31 tid=0x00007f98870b5000 nid=0x9603 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"DestroyJavaVM" #15 prio=5 os_prio=31 tid=0x00007f98860c7800 nid=0x1a03 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"线程B" #14 prio=5 os_prio=31 tid=0x00007f9876091000 nid=0x9a03 waiting for monitor entry [0x0000000307647000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.hqhe.juc.DeadLock.lambda$deadLock$1(DeadLock.java:29)
+	- waiting to lock <0x0000000795839b10> (a java.lang.String)
+	- locked <0x0000000795839b40> (a java.lang.String)
+	at com.hqhe.juc.DeadLock$$Lambda$2/736709391.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+
+   Locked ownable synchronizers:
+	- None
+
+"线程A" #13 prio=5 os_prio=31 tid=0x00007f9876090800 nid=0x9b57 waiting for monitor entry [0x0000000307544000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.hqhe.juc.DeadLock.lambda$deadLock$0(DeadLock.java:21)
+	- waiting to lock <0x0000000795839b40> (a java.lang.String)
+	- locked <0x0000000795839b10> (a java.lang.String)
+	at com.hqhe.juc.DeadLock$$Lambda$1/611437735.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+
+   Locked ownable synchronizers:
+	- None
+
+"Service Thread" #12 daemon prio=9 os_prio=31 tid=0x00007f9876024000 nid=0xa007 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C1 CompilerThread3" #11 daemon prio=9 os_prio=31 tid=0x00007f9876023800 nid=0xa303 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread2" #10 daemon prio=9 os_prio=31 tid=0x00007f9888023000 nid=0x5c03 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread1" #9 daemon prio=9 os_prio=31 tid=0x00007f987601a800 nid=0x5a03 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"C2 CompilerThread0" #8 daemon prio=9 os_prio=31 tid=0x00007f9888022000 nid=0x5913 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Command Reader" #7 daemon prio=10 os_prio=31 tid=0x00007f9876012800 nid=0x5703 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Event Helper Thread" #6 daemon prio=10 os_prio=31 tid=0x00007f9876010000 nid=0x5603 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"JDWP Transport Listener: dt_socket" #5 daemon prio=10 os_prio=31 tid=0x00007f9876011000 nid=0x3f0f runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=31 tid=0x00007f9887045000 nid=0x4003 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+   Locked ownable synchronizers:
+	- None
+
+"Finalizer" #3 daemon prio=8 os_prio=31 tid=0x00007f988800f800 nid=0x381f in Object.wait() [0x0000000306912000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000795588ed0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	- locked <0x0000000795588ed0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+   Locked ownable synchronizers:
+	- None
+
+"Reference Handler" #2 daemon prio=10 os_prio=31 tid=0x00007f9888009800 nid=0x3623 in Object.wait() [0x000000030680f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000795586bf8> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x0000000795586bf8> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+   Locked ownable synchronizers:
+	- None
+
+"VM Thread" os_prio=31 tid=0x00007f988703a800 nid=0x3403 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=31 tid=0x00007f9886008800 nid=0x514f runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=31 tid=0x00007f9886012800 nid=0x2b03 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=31 tid=0x00007f9886013800 nid=0x2d03 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=31 tid=0x00007f9886014000 nid=0x4f03 runnable 
+
+"GC task thread#4 (ParallelGC)" os_prio=31 tid=0x00007f9886014800 nid=0x4e03 runnable 
+
+"GC task thread#5 (ParallelGC)" os_prio=31 tid=0x00007f9886015000 nid=0x3103 runnable 
+
+"GC task thread#6 (ParallelGC)" os_prio=31 tid=0x00007f9886016000 nid=0x4c03 runnable 
+
+"GC task thread#7 (ParallelGC)" os_prio=31 tid=0x00007f9886016800 nid=0x3203 runnable 
+
+"VM Periodic Task Thread" os_prio=31 tid=0x00007f9887048800 nid=0x9d07 waiting on condition 
+
+JNI global references: 2226
+
+
+Found one Java-level deadlock:
+=============================
+"线程B":
+  waiting to lock monitor 0x00007f988800f3f8 (object 0x0000000795839b10, a java.lang.String),
+  which is held by "线程A"
+"线程A":
+  waiting to lock monitor 0x00007f988800f4a8 (object 0x0000000795839b40, a java.lang.String),
+  which is held by "线程B"
+
+Java stack information for the threads listed above:
+===================================================
+"线程B":
+	at com.hqhe.juc.DeadLock.lambda$deadLock$1(DeadLock.java:29)
+	- waiting to lock <0x0000000795839b10> (a java.lang.String)
+	- locked <0x0000000795839b40> (a java.lang.String)
+	at com.hqhe.juc.DeadLock$$Lambda$2/736709391.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+"线程A":
+	at com.hqhe.juc.DeadLock.lambda$deadLock$0(DeadLock.java:21)
+	- waiting to lock <0x0000000795839b40> (a java.lang.String)
+	- locked <0x0000000795839b10> (a java.lang.String)
+	at com.hqhe.juc.DeadLock$$Lambda$1/611437735.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+
+Found 1 deadlock.
+

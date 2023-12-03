@@ -1,9 +1,13 @@
 package com.hqhe.juc;
 
 
+import java.util.concurrent.LinkedTransferQueue;
+
 public class DeadLock {
+    private volatile Integer a = 1;
     public static String stringA = "qq";
     public static String stringB = "hh";
+    private LinkedTransferQueue queue;
 
     public static void main(String[] args) {
         new DeadLock().deadLock();

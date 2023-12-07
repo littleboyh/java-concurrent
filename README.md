@@ -89,6 +89,14 @@ Java stack information for the threads listed above:
 Found 1 deadlock.
 ```
 
+## CPU实现原子操作
+`原子操作`:`不可被中断的一个或者一系列操作`
+`缓存行`:`缓存的最小单位`
+`CAS`：`一个旧值，一个新值，先比较旧值和缓存的中值是否一致，一致将旧值替换成新值，否则不替换`
+### CPU如何实现原子操作
+1. 32位IA-32基于缓存加锁或者总线加锁
+
+
 # md
 
 ## 换行
